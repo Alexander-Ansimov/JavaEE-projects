@@ -1,9 +1,5 @@
 package ua.org.oa.ansimov;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class App {
 
@@ -17,9 +13,11 @@ public class App {
 	//Parse by JAXB parser from Object to XML
 		UtilParserJaxb.parseToXlmFromObject(shop);
 		
-	//Parse by DOM-parser from XML to String
+	//Parse by DOM-parser from XML to Object
 		UtilParserDom.parseToObjectByDom();
 		
+	//Parse be SAX parser from XML to Object
+		UtilParserSax.parseBySax();		
 	}
 
 }
