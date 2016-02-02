@@ -1,0 +1,15 @@
+<shop>
+	<goods id="1">
+		<name>TV</name>
+		<price>200</price>
+		<category>television</category>
+		<description>tv for home</description>
+	</goods>
+	<goods id ="2">
+		<name>recorder</name>
+		<price>150</price>
+		<category>television</category>
+		<description>video recorder</description>
+	
+	</goods>
+</shop>
