@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <shop>
-    <goods id="5">
-        <category>categor</category>
-        <description>about..</description>
-        <name>name</name>
+    <goods id="10">
+        <category>television</category>
+        <description>tv for home</description>
+        <name>TV</name>
+        <price>200</price>
+    </goods>
+    <goods id="22">
+        <category>television</category>
+        <description>video recorder</description>
+        <name>recorder</name>
+        <price>150</price>
     </goods>
 </shop>

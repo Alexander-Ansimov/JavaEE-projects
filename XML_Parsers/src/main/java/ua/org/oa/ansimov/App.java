@@ -9,37 +9,15 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		String path = "XML_for_parsing.xml";
-		String xmlForParsing = "";
-		try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
-			String flag;
-			while ((flag = reader.readLine()) != null) {
-				xmlForParsing = xmlForParsing.concat(flag);
-			}
-		} catch(Exception e){
-			e.printStackTrace();
-	    }
-		System.out.println(xmlForParsing);
-		System.out.println();
+		Shop shop = new Shop();
 		
-		Shop shop = UtilParserJaxp.parseFromXlmToObject();
-		if (shop != null) {
-			System.out.println(shop.toString());
-		}
-		System.out.println();
+	//Parse by JAXB parser from XML to Object 	
+		System.out.println((shop = UtilParserJaxb.parseFromXlmToObject()).toString());			
 		
-		Shop shop2 = new Shop();
-		Goods goods = new Goods();
-		goods.setCategory("categor");
-		goods.setDescription("about..");
-		goods.setName("name");
-		goods.setId(5);
-		List<Goods> listGoods = new ArrayList<>();
-		listGoods.add(goods);
-		shop2.setGoods(listGoods);
+	//Parse by JAXB parser from Object to XML
+		UtilParserJaxb.parseToXlmFromObject(shop);
 		
-		UtilParserJaxp.parseToXlmFromObject(shop2);
-		
+	//Parse by DOM-parser from XML to String
 		UtilParserDom.parseToObjectByDom();
 		
 	}
