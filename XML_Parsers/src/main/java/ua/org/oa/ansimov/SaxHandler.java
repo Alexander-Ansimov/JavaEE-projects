@@ -36,7 +36,8 @@ public class SaxHandler extends DefaultHandler {
 			goods.setName(new String(ch, start, length));
 		}
 		if (thisElement.equals("price")) {
-			goods.setPrice(Integer.parseInt(new String(ch, start, length)));
+			String price =  new String(ch, start, length);
+			goods.setPrice(Integer.parseInt(price));
 		}
 		if (thisElement.equals("category")) {
 			goods.setCategory(new String(ch, start, length));
@@ -47,7 +48,7 @@ public class SaxHandler extends DefaultHandler {
 	}
 	
 	public void endElement(String namespaceURI, String localName, String qName) throws SAXException{		
-		thisElement = "";                          // I can't understand for what this action need
+		thisElement = "";                          
 		if (qName.equalsIgnoreCase("goods")) {
 			listGoods.add(goods);
 		}
