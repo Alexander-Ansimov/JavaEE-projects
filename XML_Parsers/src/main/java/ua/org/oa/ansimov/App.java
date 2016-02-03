@@ -16,7 +16,7 @@ public class App {
 	//Parse by DOM-parser from XML to Object
 		UtilParserDom.parseToObjectByDom();
 		
-	//Parse be SAX parser from XML to Object
+	//Parse by SAX parser from XML to Object
 		UtilParserSax.parseBySax();		
 	}
 
