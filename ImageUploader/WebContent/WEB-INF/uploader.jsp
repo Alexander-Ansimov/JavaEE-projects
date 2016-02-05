@@ -9,18 +9,16 @@
 <title>title here</title>
 </head>
 <body>
-	 <form method="post" action="/ImageUploader" enctype="multipart/form-data">
+	 <form method="post" action="/ImageUploader/uploader1" enctype="multipart/form-data">
 		<input type="file" name="fileImg" >
 		<input type="submit" value="Upload">
 	</form>
 	<br><br>
 
-	<img alt="image" src="saved_image/image1.jpg" style="width:304px;height:228px;"> 
-	
-	${path}
-	<c:forEach var="name" items="${pageScope.names}">
-		<p>${name}</p>
-    	<%--  <img src="${name} style="width:304px;height:228px;">  --%>
+	<img alt="image" src="saved_image/image1.jpg" style="width:304px;height:228px;"> <br>
+	<c:forEach var="name" items="${names}">
+		<p>${name}</p><br>
+    	<img src="${name}" style="width:304px;height:228px;">
 	</c:forEach>  
 	
 </body>

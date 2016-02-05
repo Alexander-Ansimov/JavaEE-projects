@@ -20,7 +20,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>uploader1</servlet-name>
-  	<url-pattern>/</url-pattern>
+  	<url-pattern>/uploader1</url-pattern>
   </servlet-mapping>
 
 </web-app>
