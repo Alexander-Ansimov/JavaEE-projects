@@ -6,13 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>List of Users</title>
 </head>
 <body>
-Hi !!!!!!!!
+Hi !!!!!!!!<br>
 
-<c:forEach var="user" items="users">
-${user.firstName } <br>
+<c:forEach var="user" items="${users}">
+${user.firstName}<br>
+${user.id}<br>
+aaaa<br>
 </c:forEach>
 </body>
 </html>
