@@ -11,13 +11,14 @@
 <body>
 Hi !!!!!!!!<br>
 
-<table>
+<table border="2">
 	<tr>
 		<td>User id</td>
 		<td>First name</td>
 		<td>Last Name</td>
 		<td> Age </td>
 		<td>E-mail</td>
+		<td>Role</td>
 	</tr>
 	
 	<c:forEach var="user" items="${users}">
@@ -26,7 +27,8 @@ Hi !!!!!!!!<br>
 			<td>${user.firstName}</td>
 			<td>${user.lastName}</td>
 			<td>${user.age}</td>
-			<td>${user.email}</td>	
+			<td>${user.email}</td>
+			<td>${user.role}</td>	
 		</tr>		
 	</c:forEach>
 	

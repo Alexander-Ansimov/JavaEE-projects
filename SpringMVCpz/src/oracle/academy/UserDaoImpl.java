@@ -31,26 +31,26 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		User user = usersMap.get(id);
+		return user;
 	}
 
 	@Override
 	public boolean delete(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		usersMap.remove(user.getId());
+		return usersMap.containsKey(user.getId());
 	}
 
 	@Override
 	public User update(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		usersMap.put(user.getId(), user);
+		return usersMap.get(user.getId());
 	}
 
 	@Override
 	public List<User> getAll() {
 		List<User> users = new ArrayList<>();
-		for (Long i = 0L; i < usersMap.size(); i++) {
+		for (Long i = 1L; i <= usersMap.size(); i++) {
 			users.add(usersMap.get(i));
 		}		
 		return users;
