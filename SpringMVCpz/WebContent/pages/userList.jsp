@@ -11,10 +11,27 @@
 <body>
 Hi !!!!!!!!<br>
 
-<c:forEach var="user" items="${users}">
-${user.firstName}<br>
-${user.id}<br>
-aaaa<br>
-</c:forEach>
+<table>
+	<tr>
+		<td>User id</td>
+		<td>First name</td>
+		<td>Last Name</td>
+		<td> Age </td>
+		<td>E-mail</td>
+	</tr>
+	
+	<c:forEach var="user" items="${users}">
+		<tr>
+			<td>${user.id}</td>
+			<td>${user.firstName}</td>
+			<td>${user.lastName}</td>
+			<td>${user.age}</td>
+			<td>${user.email}</td>	
+		</tr>		
+	</c:forEach>
+	
+	
+</table>
+
 </body>
 </html>

@@ -26,7 +26,6 @@ public class UserDaoImpl implements UserDao {
 		Long id = usersCounter++;
 		user.setId(id);
 		usersMap.put(id, user);
-		System.out.println(user.getFirstName() + id + "oooo");
 		return user;
 	}
 
@@ -51,9 +50,8 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getAll() {
 		List<User> users = new ArrayList<>();
-		for (int i = 0; i < usersMap.size(); i++) {
+		for (Long i = 0L; i < usersMap.size(); i++) {
 			users.add(usersMap.get(i));
-			//System.out.println(usersMap.get(i).getFirstName()+" - "+i);
 		}		
 		return users;
 	}
