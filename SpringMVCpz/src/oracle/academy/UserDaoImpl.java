@@ -2,6 +2,7 @@ package oracle.academy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -18,12 +19,12 @@ public class UserDaoImpl implements UserDao {
 	
 	static {
 		usersMap = new HashMap<>();
-		usersCounter = 1L;
+		usersCounter = 0L;
 	}
 
 	@Override
 	public User create(User user) {
-		Long id = usersCounter++;
+		Long id = ++usersCounter;
 		user.setId(id);
 		usersMap.put(id, user);
 		return user;
@@ -38,6 +39,7 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public boolean delete(User user) {
 		usersMap.remove(user.getId());
+		System.out.println(usersMap.containsKey(user.getId()));
 		return usersMap.containsKey(user.getId());
 	}
 
@@ -50,9 +52,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public List<User> getAll() {
 		List<User> users = new ArrayList<>();
-		for (Long i = 1L; i <= usersMap.size(); i++) {
-			users.add(usersMap.get(i));
-		}		
+		Iterator<Map.Entry<Long, User>> iterator = usersMap.entrySet().iterator();
+		while (iterator.hasNext()) {
+			Map.Entry<Long, User> entry = iterator.next();
+			users.add(entry.getValue());
+		}			
 		return users;
 	}
 

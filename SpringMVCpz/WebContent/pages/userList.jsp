@@ -19,6 +19,7 @@ Hi !!!!!!!!<br>
 		<td> Age </td>
 		<td>E-mail</td>
 		<td>Role</td>
+		<td>Administrate</td>
 	</tr>
 	
 	<c:forEach var="user" items="${users}">
@@ -28,11 +29,24 @@ Hi !!!!!!!!<br>
 			<td>${user.lastName}</td>
 			<td>${user.age}</td>
 			<td>${user.email}</td>
-			<td>${user.role}</td>	
+			<td>${user.role}</td>
+			<td>
+				<form action="/delete" method="post">
+					<input type="hidden" name="id" value="${user.id}">
+					<input type="submit" value="Delete">
+				</form>
+				<form action="/update" method="post">
+					<input type="hidden" name="id" value="${user.id}">
+					<input type="submit" value="Update">
+				</form>
+			</td>
 		</tr>		
 	</c:forEach>
 	
-	
+	<form action="/add" method="get">		
+		<input type="submit" value="Add new User">
+	</form>
+		
 </table>
 
 </body>
